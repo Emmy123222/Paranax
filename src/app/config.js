@@ -25,9 +25,8 @@ export const wagmiConfig = getDefaultConfig({
 
 
 export const API_URL = {
-    DEV_URL: process.env.NEXT_PUBLIC_DEV_URL,
-    PROD_URL: process.env.NEXT_PUBLIC_PROD_URL,
-    // PROD_URL: "https://y2sm8pjvyv.us-east-1.awsapprunner.com/api/",
+    DEV_URL: (process.env.NEXT_PUBLIC_DEV_URL || 'http://localhost:3002/') + 'api/',
+    PROD_URL: (process.env.NEXT_PUBLIC_PROD_URL || 'https://genun-api-1.onrender.com/') + 'api/',
 }
 
 export const POOS_FACTORY_CONRACT_ADDRESS = "0x3C78D6B9978dB83723f4Aaa0FE27100f0762A3c6"//"0xE1Fa53c9858FD7d08CFDF4335c189c94a3aA32B5" // "0xE1Fa53c9858FD7d08CFDF4335c189c94a3aA32B5"
