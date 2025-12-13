@@ -44,7 +44,7 @@ const GetStarted = () => {
                             </span>
                         </div>
                         <p className="text-gray-300 mb-6">
-                            Great! Now choose how you'd like to continue:
+                            Great! Now choose how you&apos;d like to continue:
                         </p>
                         
                         <div className="bg-gray-800/50 border border-gray-700 rounded-2xl p-8">

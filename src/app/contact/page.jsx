@@ -14,7 +14,7 @@ const ContactPage = () => {
                     </Typography>
                     
                     <Typography className="text-white/80 text-lg text-center mb-16">
-                        Get in touch with our team to learn more about Genun's blockchain solutions.
+                        Get in touch with our team to learn more about Genun&apos;s blockchain solutions.
                     </Typography>
                     
                     <div className="grid md:grid-cols-2 gap-12">

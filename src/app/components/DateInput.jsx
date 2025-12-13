@@ -18,7 +18,7 @@ const DateInput = ({ setFieldValue,...other }) => {
         if (date) {
             setFieldValue("expiryDate",format(date,"P"))
         }
-    }, [date])
+    }, [date, setFieldValue])
 
     
 

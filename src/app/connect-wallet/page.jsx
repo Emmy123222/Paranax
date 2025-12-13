@@ -4,6 +4,7 @@ import { useRouter, useSearchParams } from "next/navigation";
 import { useState, useEffect } from "react";
 import { ConnectButton } from '@rainbow-me/rainbowkit';
 import { useAccount } from 'wagmi';
+import Image from "next/image";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 
@@ -68,7 +69,7 @@ const ConnectWallet = () => {
                                 </div>
                                 <h3 className="text-xl font-bold text-white">Wallet Connected!</h3>
                                 <p className="text-gray-300 mb-6">
-                                    Choose how you'd like to continue:
+                                    Choose how you&apos;d like to continue:
                                 </p>
                                 
                                 <div className="space-y-4">
@@ -188,10 +189,11 @@ const ConnectWallet = () => {
                                                                             }}
                                                                         >
                                                                             {chain.iconUrl && (
-                                                                                <img
+                                                                                <Image
                                                                                     alt={chain.name ?? 'Chain icon'}
                                                                                     src={chain.iconUrl}
-                                                                                    style={{ width: 12, height: 12 }}
+                                                                                    width={12}
+                                                                                    height={12}
                                                                                 />
                                                                             )}
                                                                         </div>

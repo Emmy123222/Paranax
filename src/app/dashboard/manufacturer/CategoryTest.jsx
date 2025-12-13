@@ -110,7 +110,7 @@ const CategoryTest = () => {
                 <ul className="list-disc list-inside mt-1">
                     <li>This component tests category fetching functionality</li>
                     <li>Check browser console for detailed logs</li>
-                    <li>Ensure you're logged in before testing</li>
+                    <li>Ensure you&apos;re logged in before testing</li>
                     <li>Remove this component after testing</li>
                 </ul>
             </div>

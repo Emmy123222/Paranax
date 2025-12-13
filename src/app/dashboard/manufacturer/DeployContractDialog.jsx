@@ -56,7 +56,7 @@ const DeployContractDialog = ({open, setOpen}) => {
         if (user && (!(user?.contractAddress) || user?.isFirstTimeLogin)) {
             setOpen(true)
         }
-    }, [user])
+    }, [user, setOpen])
 
     const handleOpen = () => setOpen(!open);
 

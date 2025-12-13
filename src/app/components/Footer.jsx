@@ -51,9 +51,11 @@ const Footer = () => {
                     {/* Company Info */}
                     <div className="col-span-1 md:col-span-2">
                         <Link href="/" className="flex items-center mb-6 group">
-                            <img 
+                            <Image 
                                 src="/genun.png" 
                                 alt="Genun Logo" 
+                                width={80}
+                                height={80}
                                 className="h-16 md:h-20 w-auto group-hover:scale-110 transition-transform duration-300" 
                             />
                         </Link>

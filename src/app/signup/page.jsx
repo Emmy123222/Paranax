@@ -10,6 +10,7 @@ import { Option } from "../components/MaterialTailwind";
 import PasswordInput from "../components/PasswordInput";
 import { useRouter, useSearchParams } from "next/navigation";
 import { useAccount } from 'wagmi';
+import Image from "next/image";
 import { toast } from "react-toastify";
 import { register, requestVerificationLink } from "../actions/auth";
 import Link from "next/link";
@@ -89,7 +90,7 @@ const Signup = () => {
                 {/* Header */}
                 <div className="text-center mb-8">
                     <div className="flex items-center justify-center mb-6">
-                        <img src="/genun.png" alt="Genun" className="h-20 md:h-24 w-auto hover:scale-105 transition-transform duration-300" />
+                        <Image src="/genun.png" alt="Genun" width={96} height={96} className="h-20 md:h-24 w-auto hover:scale-105 transition-transform duration-300" />
                     </div>
                     <h1 className="text-3xl md:text-4xl font-bold text-white mb-2">
                         Create Your Account

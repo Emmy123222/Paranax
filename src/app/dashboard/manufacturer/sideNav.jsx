@@ -2,6 +2,7 @@ import { List, ListItem, ListItemPrefix, ListItemSuffix, Typography } from "../.
 import Button from "../../components/Button";
 import { usePathname, useRouter } from "next/navigation";
 import Link from "next/link";
+import Image from "next/image";
 import handleLogout from "../../utils/handleLogout";
 
 const SideNav = () => {
@@ -13,7 +14,7 @@ const SideNav = () => {
             <div className="flex flex-col space-y-[60px]">
                 <div className="flex justify-center">
                     <Link href={"/dashboard/manufacturer"}>
-                        <img src="/genun.png" alt="Genun-logo" width={100} height={100} />
+                        <Image src="/genun.png" alt="Genun-logo" width={100} height={100} />
                     </Link>
                 </div>
                 <List className="">

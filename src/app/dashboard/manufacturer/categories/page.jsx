@@ -108,6 +108,7 @@ const Categories = () => {
                                                 <Image
                                                     src={product?.imageUrl}
                                                     fill={true}
+                                                    alt={product?.name || "Product image"}
                                                     className="object-cover h-[150px] w-full rounded-[5px]"
                                                 />
                                             </div>

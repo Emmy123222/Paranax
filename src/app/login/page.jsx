@@ -8,6 +8,7 @@ import ErrorMessage from "../components/ErrorMessage";
 import PasswordInput from "../components/PasswordInput";
 import { useRouter, useSearchParams } from "next/navigation";
 import { useAccount } from 'wagmi';
+import Image from "next/image";
 import { login } from "../actions/auth";
 import { toast } from "react-toastify";
 import Link from "next/link";
@@ -75,7 +76,7 @@ const Login = () => {
                 {/* Header */}
                 <div className="text-center mb-8">
                     <div className="flex items-center justify-center mb-6">
-                        <img src="/genun.png" alt="Genun" className="h-20 md:h-24 w-auto hover:scale-105 transition-transform duration-300" />
+                        <Image src="/genun.png" alt="Genun" width={96} height={96} className="h-20 md:h-24 w-auto hover:scale-105 transition-transform duration-300" />
                     </div>
                     <h1 className="text-3xl md:text-4xl font-bold text-white mb-2">
                         Welcome Back
@@ -197,7 +198,7 @@ const Login = () => {
                                 {/* Sign Up Link */}
                                 <div className="text-center pt-4 border-t border-gray-700">
                                     <p className="text-gray-400">
-                                        Don't have an account?{" "}
+                                        Don&apos;t have an account?{" "}
                                         <Link href="/signup" className="text-blue-400 hover:text-blue-300 font-medium transition-colors">
                                             Create one here
                                         </Link>

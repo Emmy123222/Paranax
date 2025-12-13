@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation";
 import { ConnectButton } from '@rainbow-me/rainbowkit';
 import { useAccount } from 'wagmi';
 import Link from "next/link";
+import Image from "next/image";
 
 const Header = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -66,7 +67,7 @@ const Header = () => {
             <div className="flex flex-row w-full justify-between items-center py-4 px-6 md:px-10 lg:px-[91px]">
                 {/* Logo */}
                 <Link href="/" className="flex-shrink-0">
-                    <img src="/genun.png" alt="genun-logo" className="h-16 md:h-20 w-auto hover:scale-105 transition-transform duration-300" />
+                    <Image src="/genun.png" alt="genun-logo" width={80} height={80} className="h-16 md:h-20 w-auto hover:scale-105 transition-transform duration-300" />
                 </Link>
 
                 {/* Desktop Navigation */}

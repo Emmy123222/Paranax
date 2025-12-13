@@ -32,7 +32,7 @@ const AboutPage = () => {
                                     Our Vision
                                 </Typography>
                                 <Typography className="text-white/80">
-                                    To create a world where every product's authenticity can be instantly 
+                                    To create a world where every product&apos;s authenticity can be instantly 
                                     verified, eliminating counterfeiting and building consumer trust.
                                 </Typography>
                             </div>

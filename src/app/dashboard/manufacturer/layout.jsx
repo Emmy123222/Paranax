@@ -81,7 +81,7 @@ const DashboardLayout = ({ children }) => {
                             isConnected ?
                                 <div className="self-end px-4 py-2 md:px-6 md:py-[10px] border rounded-[5px] border-white/20 bg-white/10 flex items-center space-x-[15px]">
                                     <div className="w-[30px] h-[30px] rounded-full bg-[#47493533] flex  items-center justify-center">
-                                        <Image width={16} height={16} src={WalletLogo} alt="" />
+                                        <Image width={16} height={16} src={WalletLogo} alt="Wallet Logo" />
                                     </div>
                                     <div className="flex flex-col space-y-1">
                                         <Typography className="text-white font-semibold font-inter text-[16px] leading-[24px]">

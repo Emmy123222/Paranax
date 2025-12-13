@@ -102,9 +102,8 @@ const Products = () => {
                             <div className="w-full h-[150px] relative">
                                 <Image
                                     src={product?.imageUrl}
-                                    //height={"150px"}
-                                    //width={100}
                                     fill={true}
+                                    alt={product?.name || "Product image"}
                                     className="object-cover h-[150px] w-full rounded-[5px]"
                                 />
                             </div>

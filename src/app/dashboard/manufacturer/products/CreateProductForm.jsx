@@ -357,6 +357,7 @@ const CreateProductForm = ({ open, setOpen }) => {
                                 src={qr}
                                 width={250}
                                 height={250}
+                                alt="Product QR Code"
                             />
                             <Typography className="mb-3 mt-6 font-crimsonText text-[24px] leading-[31px] md:text-[32px] font-semibold md:leading-[41px] text-[#474935] text-center">
                                 Congratulations! <br /> You have successfully minted your <span className="text-primary">product as token.</span>

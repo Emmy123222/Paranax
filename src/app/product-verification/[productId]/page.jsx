@@ -87,7 +87,7 @@ const ProductDetails = () => {
                                             width={120}
                                             height={120}
                                             className="mb-[42px]"
-                                            alt=""
+                                            alt="Success emoji"
                                         />
                                         <Typography className="mb-[35px] font-crimsonText text-[24px] leading-[31px] md:text-[32px] font-semibold md:leading-[41px] text-[#474935] text-center">
                                             Your product is the <span className="text-primary">real deal</span>
@@ -237,7 +237,7 @@ const ProductDetails = () => {
                                         width={120}
                                         height={120}
                                         className="mb-[42px]"
-                                        alt=""
+                                        alt="Sad emoji"
                                     />
                                     <Typography className="mb-2 font-crimsonText text-[24px] leading-[31px] md:text-[32px] font-semibold md:leading-[41px] text-[#474935] text-center">
                                         No record of this product on <span className="text-primary">our system</span>

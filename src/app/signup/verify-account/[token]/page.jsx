@@ -45,7 +45,7 @@ const VerifyAccount = () => {
             }
         }
         _verifyAccount();
-    }, [param])
+    }, [param, router])
 
     return (
         <section className="h-[calc(100vh-84px)] px-[30px] flex items-center  tabletland:h-[calc(100vh-107px)] -mt-[84px] tabletland:-mt-[107px]">
