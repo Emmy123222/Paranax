@@ -40,7 +40,7 @@ export const FETCH_JSON_INIT = (payload = {}, method = "POST", contentType = "ap
         //credentials: "same-origin", // include, *same-origin, omit
         headers: {
             "Content-Type": contentType,
-            "x-auth-token": localStorage.getItem("_poostoken_")
+            "x-auth-token": typeof window !== 'undefined' ? localStorage.getItem("_poostoken_") : null
             // 'Content-Type': 'application/x-www-form-urlencoded',
         },
         //redirect: "follow", // manual, *follow, error
@@ -57,7 +57,7 @@ export const FETCH_INIT = (method = "GET") => {
         //credentials: "same-origin", // include, *same-origin, omit
         headers: {
             //"Content-Type": contentType,
-            "x-auth-token": localStorage.getItem("_poostoken_")
+            "x-auth-token": typeof window !== 'undefined' ? localStorage.getItem("_poostoken_") : null
             // 'Content-Type': 'application/x-www-form-urlencoded',
         },
     }
@@ -70,7 +70,7 @@ export const FETCH_FORMDATA_INIT = (formData, method = "POST") => {
         //cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
         //credentials: "same-origin", // include, *same-origin, omit
         headers: {
-            "x-auth-token": localStorage.getItem("_poostoken_"),
+            "x-auth-token": typeof window !== 'undefined' ? localStorage.getItem("_poostoken_") : null,
             //"Content-Type": contentType,
             //'Content-Type': 'multipart/form-data',
         },

@@ -2,6 +2,7 @@
 import { useParams } from "next/navigation";
 import { IconButton, Spinner, Typography } from "../../components/MaterialTailwind"
 import { useEffect, useState } from "react";
+import dynamic from 'next/dynamic';
 import Emoji from "../../assets/images/emoji.png";
 import Image from "next/image";
 import Button from "../../components/Button";
@@ -20,7 +21,8 @@ const ProductDetails = () => {
     const [viewDetails, setViewDetails] = useState(false);
     const [verifying, setVerifying] = useState(true);
     const [product, setProduct] = useState(null);
-    const [error, setError] = useState(false)
+    const [error, setError] = useState(false);
+    const [isClient, setIsClient] = useState(false);
 
     const copyToClipBoard = (content, text) => {
         navigator.clipboard.writeText(text).then(res => {
@@ -28,7 +30,14 @@ const ProductDetails = () => {
         })
     }
 
+    // Ensure we're on the client side
     useEffect(() => {
+        setIsClient(true);
+    }, []);
+
+    useEffect(() => {
+        if (!isClient) return; // Don't run on server
+        
         const checkProduct = async () => {
             setVerifying(true)
             console.log('🔍 Starting product verification for ID:', params.productId);
@@ -74,7 +83,17 @@ const ProductDetails = () => {
         }
 
         checkProduct();
-    }, [params.productId])
+    }, [params.productId, isClient])
+
+    // Show loading during SSR
+    if (!isClient) {
+        return (
+            <div className="flex flex-col flex-1 items-center justify-center">
+                <Spinner className="h-8 w-8" />
+                <Typography className="mt-4">Loading...</Typography>
+            </div>
+        );
+    }
 
     return (
         <>

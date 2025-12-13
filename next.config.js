@@ -7,6 +7,16 @@ const nextConfig = {
     // Add externals for wallet compatibility
     config.externals.push('pino-pretty', 'lokijs', 'encoding');
     
+    // Handle browser-only APIs during SSR
+    if (isServer) {
+      config.resolve.fallback = {
+        ...config.resolve.fallback,
+        fs: false,
+        net: false,
+        tls: false,
+      };
+    }
+    
     if (dev && !isServer) {
       // Suppress WebSocket connection warnings in development
       config.infrastructureLogging = {
@@ -30,6 +40,11 @@ const nextConfig = {
       },
     ],
     domains: ['res.cloudinary.com'],
+  },
+  
+  // Experimental features for better SSR handling
+  experimental: {
+    esmExternals: 'loose',
   },
 };
 
