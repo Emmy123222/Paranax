@@ -73,12 +73,37 @@ export const getProducts = async () => {
 
 export const verifyProduct = async (productId) => {
     try {
-        const response = await fetch(`${API_URL.PROD_URL}products/${productId}`, FETCH_INIT())
+        const apiUrl = getApiUrl();
+        console.log('Verifying product with URL:', `${apiUrl}products/${productId}`);
+        
+        // Use simple fetch without auth headers for public product verification
+        const response = await fetch(`${apiUrl}products/${productId}`, {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json',
+            }
+        });
+        
+        console.log('Product verification response status:', response.status);
+        
+        if (!response.ok) {
+            console.error('Product verification failed:', response.status, response.statusText);
+            const errorText = await response.text();
+            console.error('Error response:', errorText);
+        }
+        
         return response;
-    }
-
-    catch (err) {
-        throw err;
+    } catch (err) {
+        console.error('Product verification network error:', err);
+        // Return a mock response to prevent crashes
+        return new Response(JSON.stringify({
+            success: false,
+            message: 'Unable to connect to backend. Please check your internet connection.',
+            error: 'NETWORK_ERROR'
+        }), {
+            status: 503,
+            headers: { 'Content-Type': 'application/json' }
+        });
     }
 }
 

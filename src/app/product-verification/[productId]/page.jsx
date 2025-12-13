@@ -31,36 +31,44 @@ const ProductDetails = () => {
     useEffect(() => {
         const checkProduct = async () => {
             setVerifying(true)
+            console.log('🔍 Starting product verification for ID:', params.productId);
+            
             try {
                 const response = await verifyProduct(params.productId);
+                console.log('📡 Response received:', response.status, response.statusText);
+                
                 const result = await response.json();
+                console.log('📦 Response data:', result);
+                
                 if (response.ok) {
-                    //console.log("products:", result?.product)
-                    //router.replace("/dashboard/manufacturer")
+                    console.log('✅ Product verification successful');
                     setVerifying(false)
                     setProduct(result?.product)
-                }
-
-                else {
+                } else {
+                    console.log('❌ Product verification failed:', result);
                     setVerifying(false)
                     if (result?.message) {
                         toast.error(result?.message)
                         setError(true)
+                    } else {
+                        toast.error('Product verification failed')
+                        setError(true)
                     }
-
                 }
             }
 
             catch (err) {
-                console.log("error:", err)
+                console.log("Product verification error:", err)
                 setVerifying(false)
+                setError(true)
+                
+                // Handle different types of errors
                 if (err?.response?.data?.message) {
                     toast.error(err?.response.data?.message)
-                    setError(true)
-                }
-                else {
-                    toast.error("Oops, something went wrong")
-                    setError(true)
+                } else if (err?.message) {
+                    toast.error(err.message)
+                } else {
+                    toast.error("Unable to verify product. Backend service may be unavailable.")
                 }
             }
         }
