@@ -5,16 +5,12 @@ import { useAccount, useChainId } from 'wagmi';
 import { arbitrumSepolia } from 'wagmi/chains';
 import { checkNetworkConnectivity } from '../utils/rpcErrorHandler';
 
-const NetworkStatus = () => {
-    const [isClient, setIsClient] = useState(false);
+// Inner component that uses hooks
+const NetworkStatusInner = () => {
     const [networkStatus, setNetworkStatus] = useState('checking');
     const [lastChecked, setLastChecked] = useState(null);
-    
-    // Only use Wagmi hooks on client side
-    const account = isClient ? useAccount() : { isConnected: false };
-    const chainId = isClient ? useChainId() : null;
-    
-    const { isConnected } = account;
+    const { isConnected } = useAccount();
+    const chainId = useChainId();
 
     const checkNetwork = async () => {
         setNetworkStatus('checking');
@@ -28,23 +24,16 @@ const NetworkStatus = () => {
         }
     };
 
-    // Set client-side flag
     useEffect(() => {
-        setIsClient(true);
-    }, []);
-
-    useEffect(() => {
-        if (!isClient || !isConnected) return;
-        
         if (isConnected) {
             checkNetwork();
             // Check network status every 30 seconds
             const interval = setInterval(checkNetwork, 30000);
             return () => clearInterval(interval);
         }
-    }, [isConnected, isClient]);
+    }, [isConnected]);
 
-    if (!isClient || !isConnected) {
+    if (!isConnected) {
         return null;
     }
 
@@ -122,6 +111,23 @@ const NetworkStatus = () => {
             </div>
         </div>
     );
+};
+
+// Wrapper component that handles SSR
+const NetworkStatus = () => {
+    const [isClient, setIsClient] = useState(false);
+
+    useEffect(() => {
+        setIsClient(true);
+    }, []);
+
+    // Return nothing during SSR
+    if (!isClient) {
+        return null;
+    }
+
+    // Return full component with Web3 hooks on client side
+    return <NetworkStatusInner />;
 };
 
 export default NetworkStatus;

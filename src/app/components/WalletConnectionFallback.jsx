@@ -3,26 +3,14 @@
 import { useEffect, useState } from 'react';
 import { useAccount, useConnect } from 'wagmi';
 
-const WalletConnectionFallback = ({ children }) => {
+// Inner component that uses hooks
+const WalletConnectionFallbackInner = ({ children }) => {
   const [connectionError, setConnectionError] = useState(false);
   const [showFallback, setShowFallback] = useState(false);
-  const [isClient, setIsClient] = useState(false);
-  
-  // Only use Wagmi hooks on client side
-  const account = isClient ? useAccount() : { isConnected: false };
-  const connect = isClient ? useConnect() : { connectors: [], connect: () => {} };
-  
-  const { isConnected } = account;
-  const { connectors } = connect;
-
-  // Set client-side flag
-  useEffect(() => {
-    setIsClient(true);
-  }, []);
+  const { isConnected } = useAccount();
+  const { connectors, connect } = useConnect();
 
   useEffect(() => {
-    if (!isClient) return;
-    
     // Monitor for WebSocket connection errors
     const handleError = (event) => {
       if (event.reason?.message?.includes('WebSocket connection failed')) {
@@ -41,7 +29,7 @@ const WalletConnectionFallback = ({ children }) => {
     return () => {
       window.removeEventListener('unhandledrejection', handleError);
     };
-  }, [isConnected, isClient]);
+  }, [isConnected]);
 
   // Reset fallback when connection is successful
   useEffect(() => {
@@ -76,6 +64,23 @@ const WalletConnectionFallback = ({ children }) => {
   }
 
   return children;
+};
+
+// Wrapper component that handles SSR
+const WalletConnectionFallback = ({ children }) => {
+  const [isClient, setIsClient] = useState(false);
+
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
+
+  // Return children without Web3 functionality during SSR
+  if (!isClient) {
+    return children;
+  }
+
+  // Return full component with Web3 hooks on client side
+  return <WalletConnectionFallbackInner>{children}</WalletConnectionFallbackInner>;
 };
 
 export default WalletConnectionFallback;

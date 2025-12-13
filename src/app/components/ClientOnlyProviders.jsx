@@ -33,12 +33,7 @@ export default function ClientOnlyProviders({ children }) {
     };
   }, []);
 
-  // Return children without Web3 providers during SSR
-  if (!isClient) {
-    return <>{children}</>;
-  }
-
-  // Return full Web3 providers only on client side
+  // Always provide both WagmiProvider and RainbowKitProvider
   return (
     <WagmiProvider config={wagmiConfig}>
       <QueryClientProvider client={queryClient}>
