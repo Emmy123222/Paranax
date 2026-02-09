@@ -14,7 +14,7 @@ const SideNav = () => {
             <div className="flex flex-col space-y-[60px]">
                 <div className="flex justify-center">
                     <Link href={"/dashboard/manufacturer"}>
-                        <Image src="/genun.png" alt="Genun-logo" width={100} height={100} />
+                        <h1 className="text-white font-bold text-2xl">Paranax</h1>
                     </Link>
                 </div>
                 <List className="">
