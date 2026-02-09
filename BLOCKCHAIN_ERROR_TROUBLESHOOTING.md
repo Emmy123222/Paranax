@@ -28,7 +28,7 @@ Details: Internal JSON-RPC error.
 ```javascript
 // Improved transport configuration
 transports: {
-    [arbitrumSepolia.id]: http('https://sepolia-rollup.arbitrum.io/rpc', {
+    [baseSepolia.id]: http('https://sepolia.base.org', {
         batch: false, // Disable batching to avoid RPC issues
         fetchOptions: {
             timeout: 30000, // Increased timeout
@@ -53,7 +53,7 @@ transports: {
 
 ### 4. Network Status Monitoring (`NetworkStatus.jsx`)
 - **Real-time Status**: Shows current network connection status
-- **Network Validation**: Ensures correct network (Arbitrum Sepolia)
+- **Network Validation**: Ensures correct network (Base Sepolia)
 - **Visual Indicators**: Color-coded status indicators
 - **Manual Retry**: Allows users to manually check network status
 
@@ -63,13 +63,13 @@ transports: {
 
 #### Step 1: Check Network Status
 - Look for the network status indicator in the bottom-right corner
-- Ensure you're connected to Arbitrum Sepolia (Chain ID: 421614)
+- Ensure you're connected to Base Sepolia (Chain ID: 84532)
 - If status shows "disconnected" or "error", click "Retry"
 
 #### Step 2: Verify Wallet Configuration
 - Ensure wallet is connected and unlocked
 - Check that you have sufficient ETH for gas fees
-- Verify you're on the correct network (Arbitrum Sepolia)
+- Verify you're on the correct network (Base Sepolia)
 
 #### Step 3: Clear Browser Cache
 - Clear browser cache and cookies

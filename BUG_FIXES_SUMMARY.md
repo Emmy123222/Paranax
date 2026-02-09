@@ -67,7 +67,7 @@ NEXT_PUBLIC_WALLETCONNECT_PROJECT_ID=df01c1b1561c6373ef84c87b27c8ea8c
 ```javascript
 // Added proper transport configuration
 transports: {
-  [arbitrumSepolia.id]: http('https://sepolia-rollup.arbitrum.io/rpc', {
+  [baseSepolia.id]: http('https://sepolia.base.org', {
     batch: true,
     fetchOptions: { timeout: 10000 },
     retryCount: 3,

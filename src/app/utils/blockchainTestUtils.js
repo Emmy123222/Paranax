@@ -95,12 +95,12 @@ export const testWalletRequirements = (address, chainId) => {
     
     const results = {
         connected: !!address,
-        correctNetwork: chainId === 421614, // Arbitrum Sepolia
+        correctNetwork: chainId === 84532, // Base Sepolia
         addressFormat: address ? /^0x[a-fA-F0-9]{40}$/.test(address) : false
     };
     
     console.log(`Wallet Connected: ${results.connected ? '✅' : '❌'}`);
-    console.log(`Correct Network: ${results.correctNetwork ? '✅' : '❌'} (Current: ${chainId}, Expected: 421614)`);
+    console.log(`Correct Network: ${results.correctNetwork ? '✅' : '❌'} (Current: ${chainId}, Expected: 84532)`);
     console.log(`Valid Address: ${results.addressFormat ? '✅' : '❌'} (${address || 'Not connected'})`);
     
     return results;
