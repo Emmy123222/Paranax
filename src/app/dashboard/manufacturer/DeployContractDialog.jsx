@@ -93,7 +93,7 @@ const DeployContractDialog = ({open, setOpen}) => {
                                 `${process.env.NEXT_PUBLIC_PROD_URL}product-verification/{id}`,
                             ],
                             // Add gas estimation for better transaction handling
-                            gas: 500000n, // Set a reasonable gas limit
+                            gas: 3000000n, // Increased gas limit for contract creation on Base
                         },
                         {
                             onSuccess: async (res, variable) => {
@@ -145,6 +145,12 @@ const DeployContractDialog = ({open, setOpen}) => {
 
                             onError: (err) => {
                                 console.error("Contract deployment error:", err);
+                                console.error("Error details:", {
+                                    message: err.message,
+                                    cause: err.cause,
+                                    shortMessage: err.shortMessage,
+                                    details: err.details
+                                });
                                 setConfirming(false);
                                 
                                 const errorMessage = getErrorMessage(err);
