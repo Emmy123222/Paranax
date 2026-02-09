@@ -453,7 +453,7 @@ const CreateProductForm = ({ open, setOpen }) => {
                                                     </div>
                                                     <div className="flex flex-col space-y-2 w-full  mb-[35px]">
                                                         <Input
-                                                            label="NAFDAC number"
+                                                            label="FDA registration number"
                                                             Icon={
                                                                 () => (
                                                                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -468,7 +468,7 @@ const CreateProductForm = ({ open, setOpen }) => {
                                                             name="nafdacId"
                                                             onBlur={handleBlur}
                                                             className="w-full bg-white"
-                                                            placeholder="NAFDAC number"
+                                                            placeholder="FDA registration number"
                                                             type="text"
                                                         />
                                                         <ErrorMessage error={errors.nafdacId} touched={touched.nafdacId} />
