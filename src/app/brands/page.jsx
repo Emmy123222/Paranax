@@ -12,7 +12,7 @@ const BrandsPage = () => {
                         Trusted Brands
                     </Typography>
                     <Typography className="text-white/80 text-lg mb-12">
-                        Discover the brands that trust Genun for product authenticity and verification.
+                        Discover the brands that trust Paranax for product authenticity and verification.
                     </Typography>
                     
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-16">

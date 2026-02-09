@@ -51,16 +51,12 @@ const Footer = () => {
                     {/* Company Info */}
                     <div className="col-span-1 md:col-span-2">
                         <Link href="/" className="flex items-center mb-6 group">
-                            <Image 
-                                src="/genun.png" 
-                                alt="Genun Logo" 
-                                width={80}
-                                height={80}
-                                className="h-16 md:h-20 w-auto group-hover:scale-110 transition-transform duration-300" 
-                            />
+                            <span className="text-4xl font-bold text-white group-hover:text-blue-400 transition-colors duration-300">
+                                Paranax
+                            </span>
                         </Link>
                         <Typography className="text-white/80 mb-6 max-w-md leading-relaxed text-lg">
-                            Genun provides authenticity and verification to products created by manufacturers 
+                            Paranax provides authenticity and verification to products created by manufacturers 
                             from diverse sectors using cutting-edge blockchain technology.
                         </Typography>
                         
@@ -115,7 +111,7 @@ const Footer = () => {
                                 { name: "Brands", href: "/brands" },
                                 { name: "About Us", href: "/about" },
                                 { name: "Services", href: "/services" },
-                                { name: "Contact", href: "/contact" }
+                                // { name: "Contact", href: "/contact" }
                             ].map((link, index) => (
                                 <li key={index}>
                                     <Link 
@@ -164,7 +160,7 @@ const Footer = () => {
                 <div className="border-t border-white/10 mt-12 pt-8">
                     <div className="flex flex-col md:flex-row justify-between items-center gap-6">
                         <Typography className="text-white/60 text-sm">
-                            © {currentYear} Genun. All rights reserved. Powered by blockchain technology.
+                            © {currentYear} Paranax. All rights reserved. Powered by blockchain technology.
                         </Typography>
                         <div className="flex flex-wrap gap-6">
                             {[

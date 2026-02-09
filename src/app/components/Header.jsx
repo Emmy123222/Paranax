@@ -25,7 +25,7 @@ const Header = () => {
         { name: "Brands", href: "/brands" },
         { name: "About Us", href: "/about" },
         { name: "Services", href: "/services" },
-        { name: "Contact Us", href: "/contact" }
+        // { name: "Contact Us", href: "/contact" }
     ];
 
     // Determine button text and action based on current route
@@ -76,7 +76,9 @@ const Header = () => {
             <div className="flex flex-row w-full justify-between items-center py-4 px-6 md:px-10 lg:px-[91px]">
                 {/* Logo */}
                 <Link href="/" className="flex-shrink-0">
-                    <Image src="/genun.png" alt="genun-logo" width={80} height={80} className="h-16 md:h-20 w-auto hover:scale-105 transition-transform duration-300" />
+                    <span className="text-3xl md:text-4xl font-bold text-white hover:text-blue-400 transition-colors duration-300">
+                        Paranax
+                    </span>
                 </Link>
 
                 {/* Desktop Navigation */}

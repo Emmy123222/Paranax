@@ -25,7 +25,7 @@ const GetStarted = () => {
                         <span className="text-blue-400"> YOU</span>
                     </h1>
                     <p className="text-gray-300">
-                        Connect your wallet to get started with Genun
+                        Connect your wallet to get started with Paranax
                     </p>
                 </div>
                 

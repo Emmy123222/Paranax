@@ -8,8 +8,8 @@ import ModalSetup from "./components/ModalSetup";
 
 
 export const metadata = {
-  title: "PoOs",
-  description: "A solution to product ingenuity  in the supply chain",
+  title: "Paranax",
+  description: "Blockchain-based product authentication and supply chain solution",
 };
 
 export default function RootLayout({ children }) {

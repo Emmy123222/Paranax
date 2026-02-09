@@ -11,7 +11,7 @@ if (typeof window !== 'undefined') {
   const { http } = require('wagmi');
 
   wagmiConfig = getDefaultConfig({
-    appName: 'Genun',
+    appName: 'Paranax',
     projectId: process.env.NEXT_PUBLIC_WALLETCONNECT_PROJECT_ID || '2f5a2c1b8e4d3a9f7c6b5e8d9a2f1c4b',
     chains: [arbitrumSepolia],
     ssr: false, // Disable SSR for wagmi

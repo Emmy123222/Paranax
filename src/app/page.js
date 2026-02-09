@@ -79,7 +79,7 @@ export default function Landing() {
               <div className="relative border-2 border-dashed border-blue-400/30 rounded-full p-12 hover:border-blue-400/60 transition-all duration-500">
                 <Image
                   src={Security}
-                  alt="security-genun"
+                  alt="security-paranax"
                   className="transform hover:scale-110 transition-transform duration-700 ease-out max-w-full h-auto"
                   width={400}
                   height={400}
@@ -93,7 +93,7 @@ export default function Landing() {
       {/* How It Works */}
       <section className="py-32 mt-20">
         <h2 className="text-5xl font-bold text-white text-center mb-16">
-          How Genun Works
+          How Paranax Works
         </h2>
         
         <div className="grid md:grid-cols-3 gap-12 max-w-6xl mx-auto px-8">
@@ -126,7 +126,7 @@ export default function Landing() {
       {/* Features Section */}
       <section className="py-20">
         <h2 className="text-5xl font-bold text-white text-center mb-16">
-          Why Choose Genun?
+          Why Choose Paranax?
         </h2>
         
         <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto px-8">
@@ -233,7 +233,7 @@ export default function Landing() {
           Ready to Protect Your Brand?
         </h2>
         <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
-          Join thousands of manufacturers who trust Genun to secure their products and build customer confidence.
+          Join thousands of manufacturers who trust Paranax to secure their products and build customer confidence.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <button 

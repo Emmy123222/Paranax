@@ -76,13 +76,13 @@ const LoginContent = () => {
                 {/* Header */}
                 <div className="text-center mb-8">
                     <div className="flex items-center justify-center mb-6">
-                        <Image src="/genun.png" alt="Genun" width={96} height={96} className="h-20 md:h-24 w-auto hover:scale-105 transition-transform duration-300" />
+                        <Image src="/paranax.png" alt="Paranax" width={96} height={96} className="h-20 md:h-24 w-auto hover:scale-105 transition-transform duration-300" />
                     </div>
                     <h1 className="text-3xl md:text-4xl font-bold text-white mb-2">
                         Welcome Back
                     </h1>
                     <p className="text-gray-400 text-lg">
-                        Sign in to your Genun account
+                        Sign in to your Paranax account
                     </p>
                     
                     {isWalletConnected && (
