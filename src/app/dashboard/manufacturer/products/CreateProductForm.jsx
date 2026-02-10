@@ -171,9 +171,10 @@ const CreateProductForm = ({ open, setOpen }) => {
                                     console.log('🎉 Token minting confirmed successfully!');
                                     
                                     // Generate QR code
-                                    const baseUrl = process.env.NODE_ENV === 'production' 
-                                        ? 'https://genuns.netlify.app' 
-                                        : 'http://localhost:3000';
+                                    const baseUrl = process.env.NEXT_PUBLIC_APP_URL || 
+                                        (process.env.NODE_ENV === 'production' 
+                                            ? 'https://paranax.vercel.app/' 
+                                            : 'http://localhost:3000');
                                     const qrUrl = await QRCode.toDataURL(`${baseUrl}/product-verification/${productData.productId}`);
                                     
                                     setQr(qrUrl);
